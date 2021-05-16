@@ -18,14 +18,14 @@ startVideo()
   for(let i=1; i<= maskimage;i++)
   {
     const newImage = document.createElement('IMG');
-    newImage.setAttribute(`src`, `images/mask/1 (${i}).jpg`)
+    newImage.setAttribute(`src`, `images/mask/${i}.jpg`)
     newImage.classList.add('mask-img')
     imagestrained.appendChild(newImage)
   }
   for(let i=1; i<= nomaskimage;i++)
   {
     const newImage = document.createElement('IMG');
-    newImage.setAttribute(`src`, `images/no-mask/2 (${i}).jpg`)
+    newImage.setAttribute(`src`, `images/no-mask/${i}.jpg`)
     newImage.classList.add('no-mask-img')
     imagestrained.appendChild(newImage)
   }
