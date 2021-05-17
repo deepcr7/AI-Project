@@ -36,10 +36,15 @@ window.onload = async() => {
             async() => {
                 console.log("predicting")
                 const testImage = document.getElementById('test-img')
-                await makePrediction(testImage, mobilenetTest, classifer)
-
-
-            }, 3000
+                await makePrediction(testImage, mobilenetTest, classifer, (doc) => {
+                  if(doc == 1)
+                  {
+                    testImage.classList.add('mask');
+                  } else {
+                    testImage.classList.add('no-mask');
+                  }
+                })
+            }, 5000
 
         )
         //makePrediction(testImage, mobilenetTest, classifer)
