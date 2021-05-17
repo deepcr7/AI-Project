@@ -37,7 +37,7 @@ window.onload = async() => {
                 console.log("predicting")
                 const testImage = document.getElementById('test-img')
                 await makePrediction(testImage, mobilenetTest, classifer, (doc) => {
-                  if(doc == 1)
+                  if(doc == 0)
                   {
                     testImage.classList.add('mask');
                   } else {
