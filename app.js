@@ -35,16 +35,11 @@ window.onload = async() => {
     const timer = setIntervalAsync(
             async() => {
                 console.log("predicting")
-                const testImage = document.getElementById('test-img')
-                await makePrediction(testImage, mobilenetTest, classifer, (doc) => {
-                  if(doc == 0)
-                  {
-                    testImage.classList.add('mask');
-                  } else {
-                    testImage.classList.add('no-mask');
-                  }
-                })
-            }, 5000
+                var testImage = document.getElementById('test-img')
+                await makePrediction(testImage, mobilenetTest, classifer)
+
+
+            }, 3000
 
         )
         //makePrediction(testImage, mobilenetTest, classifer)
@@ -78,6 +73,7 @@ async function makePrediction(testImage, mobilenetTest, classifer) {
         const logits = mobilenetTest.infer(tfTestImage, 'conv_preds')
         const prediction = await classifer.predictClass(logits);
         console.log(prediction)
+        testImage.className = "";
         if (prediction.label == 0) {
             testImage.classList.add('mask')
         } else {
