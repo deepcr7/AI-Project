@@ -1,6 +1,6 @@
 window.onload = async() => {
     const maskimage = 20
-    const nomaskimage = 20
+    const nomaskimage = 36
 
     const imagestrained = document.querySelector(".train-images")
     const video = document.getElementById("test-img")
